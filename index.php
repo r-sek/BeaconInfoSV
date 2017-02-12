@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BeaconInfoSV</title>
+</head>
+<body>
 <?php
 /**
  * Created by PhpStorm.
@@ -9,3 +16,5 @@
 phpinfo();
 
 ?>
+</body>
+</html>
