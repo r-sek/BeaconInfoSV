@@ -1,5 +1,5 @@
 # BeaconInfoSV
-### BeaconInfoサーバサイド
+BeaconInfoサーバサイド
 
 ## 仕様
 * PHP7.0
