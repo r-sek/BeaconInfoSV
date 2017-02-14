@@ -32,6 +32,6 @@ if($result = $mysqli->query($sql)){
     }
     $result -> close();
 }
-header('Content-type: text/plain; charset=utf-8');
+header('Content-Type: application/json; charset=utf-8');
 echo json_encode($spot);
 ?>
