@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+  <component name="DataSourceManagerImpl" format="xml" hash="1798592913">
     <data-source source="LOCAL" name="MySQL - beaconinfodb@beaconinfo-cluster.cluster-cbio2wxtfb7s.us-west-2.rds.amazonaws.com" uuid="c94a286a-f1c8-41d2-ad42-336e0b858602">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://beaconinfo-cluster.cluster-cbio2wxtfb7s.us-west-2.rds.amazonaws.com:3306/beaconinfodb</jdbc-url>
+      <driver-properties>
+        <property name="autoReconnect" value="true" />
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="yearIsDateType" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="MySQL - beaconti_spot@beaconti-cluster.cluster-cbio2wxtfb7s.us-west-2.rds.amazonaws.com" uuid="3229139f-c100-4533-993f-7f53915bd4e6">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://beaconti-cluster.cluster-cbio2wxtfb7s.us-west-2.rds.amazonaws.com:3306/beaconti_spot</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
