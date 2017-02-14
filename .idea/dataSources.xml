@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3578777959">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
     <data-source source="LOCAL" name="MySQL - beaconinfodb@beaconinfo-cluster.cluster-cbio2wxtfb7s.us-west-2.rds.amazonaws.com" uuid="c94a286a-f1c8-41d2-ad42-336e0b858602">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
