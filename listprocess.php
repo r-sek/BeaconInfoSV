@@ -26,8 +26,8 @@ if ($result = $mysqli->query($sql)) {
     $spot = array();
     while ($row = $result->fetch_assoc()) {
         $spot[] = array(
-            "id" => $row->spot_id
-        , "name" => $row->spot_name
+            "id" => $row->spot_master.spot_id
+        , "name" => $row->spot_ja.spot_name
         );
     }
     //$result -> close();
