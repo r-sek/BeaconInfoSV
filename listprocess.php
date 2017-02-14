@@ -18,7 +18,9 @@ $mysqli = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVE
 $lang = $_POST['lang']; //言語情報の取得(jp or en)
 $sort = $_POST['sort']; //ソート条件の格納
 
+//SQLのセット
 $sql = "SELECT spot_master.spot_id,spot_ja.spot_name FROM beaconti_spot.spot_master,beaconti_spot.spot_ja WHERE spot_ja.spot_id = spot_master.spot_id;";
+
 if($result = $mysqli->query($sql)){
     echo "rows=" . $result->num_rows;
     $spot = array();
