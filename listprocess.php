@@ -52,5 +52,5 @@ $array = $result->fetch_all(MYSQLI_ASSOC);
 //$mysqli->close();
 
 header('Content-type: application/json');
-echo json_encode($list);
+echo json_encode($array);
 ?>
