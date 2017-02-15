@@ -22,19 +22,35 @@ $mysqli->set_charset ("utf8");
 
 //SQLのセット
 $sql = "SELECT spot_master.spot_id,spot_ja.spot_name FROM beaconti_spot.spot_master,beaconti_spot.spot_ja WHERE spot_ja.spot_id = spot_master.spot_id;";
+//
+//$stmt -> execute($sql);
+//$list = $stmt->fetchAll();
+//
 
-if ($result = $mysqli->query($sql)) {
-    echo "rows=" . $result->num_rows;
-    $spot = array();
-    while ($row = $result->fetch_assoc()) {
-        print_r($row);
-        $spot[] = array(
-            'id' => $row["spot_id"]
-        , 'name' => $row["spot_name"]
-        );
-    }
-    //$result -> close();
-}
+$result = $mysqli->query($sql);
+$array = $result->fetch_all(MYSQLI_ASSOC);
+
+//if ($result = $mysqli->query($sql)) {
+//    echo "rows=" . $result->num_rows;
+//    $spot = array();
+//    while ($row = $result->fetch_assoc()) {
+//        print_r($row);
+//        $spot[] = array('array' => array(
+//            'id' => $row["spot_id"]
+//        , 'name' => $row["spot_name"]
+//        ));
+//    }
+//    $result -> close();
+//}
 header('Content-Type: application/json; charset=utf-8');
-echo json_encode($spot, JSON_UNESCAPED_UNICODE);
+echo json_encode($array, JSON_UNESCAPED_UNICODE);
+//
+////結果セットを開放
+//$result->free();
+//
+////接続を閉じる
+//$mysqli->close();
+
+//header('Content-type: application/json');
+//echo json_encode($list);
 ?>
