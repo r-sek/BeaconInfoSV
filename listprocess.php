@@ -1,6 +1,6 @@
 <?php
-ini_set("display_errors", On);
-error_reporting(E_ALL);
+//ini_set("display_errors", On);
+//error_reporting(E_ALL);
 //require_once("JSON.php");
 /**
  * Created by PhpStorm.
@@ -51,6 +51,6 @@ $array = $result->fetch_all(MYSQLI_ASSOC);
 ////接続を閉じる
 //$mysqli->close();
 
-header('Content-type: application/json');
-echo json_encode($array);
+header('Content-type: application/json ; charset=utf-8');
+echo json_encode($array, JSON_UNESCAPED_UNICODE);
 ?>
