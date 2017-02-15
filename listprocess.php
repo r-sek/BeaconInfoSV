@@ -42,8 +42,8 @@ $array = $result->fetch_all(MYSQLI_ASSOC);
 //    }
 //    $result -> close();
 //}
-header('Content-Type: application/json; charset=utf-8');
-echo json_encode($array, JSON_UNESCAPED_UNICODE);
+//header('Content-Type: application/json; charset=utf-8');
+//echo json_encode($pot, JSON_UNESCAPED_UNICODE);
 //
 ////結果セットを開放
 //$result->free();
@@ -51,6 +51,6 @@ echo json_encode($array, JSON_UNESCAPED_UNICODE);
 ////接続を閉じる
 //$mysqli->close();
 
-//header('Content-type: application/json');
-//echo json_encode($list);
+header('Content-type: application/json');
+echo json_encode($list);
 ?>
