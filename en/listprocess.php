@@ -22,12 +22,12 @@ $mysqli->set_charset ("utf8");
 $sql;
 
 if($jungleCode == 0){
-    $sql = "SELECT spot_master.spot_id,spot_ja.spot_name FROM beaconti_spot.spot_master,beaconti_spot.spot_ja WHERE spot_ja.spot_id = spot_master.spot_id";
+    $sql = "SELECT spot_master.spot_id,spot_en.spot_name FROM beaconti_spot.spot_master,beaconti_spot.spot_en WHERE spot_en.spot_id = spot_master.spot_id";
     $result = $mysqli->query($sql);
     $array = $result->fetch_all(MYSQLI_ASSOC);
 
 }else{
-    $sql = "SELECT spot_master.spot_id,spot_ja.spot_name FROM beaconti_spot.spot_master,beaconti_spot.spot_ja WHERE spot_master.spot_jungle =? AND spot_ja.spot_id = spot_master.spot_id";
+    $sql = "SELECT spot_master.spot_id,spot_en.spot_name FROM beaconti_spot.spot_master,beaconti_spot.spot_en WHERE spot_master.spot_jungle =? AND spot_en.spot_id = spot_master.spot_id";
     if($stmt = $mysqli->prepare($sql)){
         $stmt->bind_param("i",$jungleCode);
         $stmt->execute();
