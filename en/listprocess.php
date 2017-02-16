@@ -16,13 +16,29 @@
 $mysqli = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
 
 $lang = $_POST['lang']; //言語情報の取得(jp or en)
-$sort = $_POST['sort']; //ソート条件の格納
+$jungleCode = $_GET['jungle']; //ソート条件の格納
 $sql;
 $mysqli->set_charset ("utf8");
+$sql;
 
+if($jungleCode == 0){
+    $sql = "SELECT spot_master.spot_id,spot_ja.spot_name FROM beaconti_spot.spot_master,beaconti_spot.spot_ja WHERE spot_ja.spot_id = spot_master.spot_id";
+    $result = $mysqli->query($sql);
+    $array = $result->fetch_all(MYSQLI_ASSOC);
+
+}else{
+    $sql = "SELECT spot_master.spot_id,spot_ja.spot_name FROM beaconti_spot.spot_master,beaconti_spot.spot_ja WHERE spot_master.spot_jungle =? AND spot_ja.spot_id = spot_master.spot_id";
+    if($stmt = $mysqli->prepare($sql)){
+        $stmt->bind_param("i",$jungleCode);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $array = $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+}
 
 //SQLのセット
-$sql = "SELECT spot_master.spot_id,spot_en.spot_name FROM beaconti_spot.spot_master,beaconti_spot.spot_en WHERE spot_en.spot_id = spot_master.spot_id";
+//$sql = "SELECT spot_master.spot_id,spot_en.spot_name FROM beaconti_spot.spot_master,beaconti_spot.spot_en WHERE spot_en.spot_id = spot_master.spot_id";
 
 
 
@@ -31,8 +47,8 @@ $sql = "SELECT spot_master.spot_id,spot_en.spot_name FROM beaconti_spot.spot_mas
 //$list = $stmt->fetchAll();
 //
 
-$result = $mysqli->query($sql);
-$array = $result->fetch_all(MYSQLI_ASSOC);
+//$result = $mysqli->query($sql);
+//$array = $result->fetch_all(MYSQLI_ASSOC);
 
 //if ($result = $mysqli->query($sql)) {
 //    echo "rows=" . $result->num_rows;
