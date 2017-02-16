@@ -22,7 +22,7 @@ $mysqli->set_charset ("utf8");
 
 
 //SQLのセット
-$sql = "SELECT spot_master.spot_id,spot_ja.spot_name FROM beaconti_spot.spot_master,beaconti_spot.spot_ja WHERE spot_ja.spot_id = spot_master.spot_id";
+$sql = "SELECT spot_master.spot_id,spot_en.spot_name FROM beaconti_spot.spot_master,beaconti_spot.spot_en WHERE spot_en.spot_id = spot_master.spot_id";
 
 
 
