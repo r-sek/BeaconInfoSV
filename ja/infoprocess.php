@@ -15,7 +15,7 @@ $lang = $_GET['lang']; //言語情報の取得(jp or en)
 $spotId = $_GET['id']; //スポットID情報の取得
 $mysqli->set_charset ("utf8");
 
-$sql = "SELECT spot_master.spot_id,spot_master.latitude,spot_master.longtude,spot_master.image_url, spot_ja.spot_name,spot_ja.spot_info FROM beaconti_spot.spot_master,beaconti_spot.spot_ja WHERE spot_master.spot_id=? AND spot_ja.spot_id = spot_master.spot_id";
+$sql = "SELECT spot_master.spot_id,spot_master.latitude,spot_master.longitude,spot_master.image_url, spot_ja.spot_name,spot_ja.spot_info FROM beaconti_spot.spot_master,beaconti_spot.spot_ja WHERE spot_master.spot_id=? AND spot_ja.spot_id = spot_master.spot_id";
 
 if($stmt = $mysqli->prepare($sql)){
     $stmt->bind_param("i",$spotId);
